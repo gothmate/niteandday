@@ -3,6 +3,7 @@ const spinner = document.querySelector('.spinner')
 const bg = document.querySelector('.bg')
 const bodybg = document.querySelector('.bodybg')
 const h1 = document.getElementsByTagName('h1')
+const p = document.getElementsByTagName('p')
 
 console.log(h1)
 container.addEventListener('click', () => {
@@ -10,11 +11,13 @@ container.addEventListener('click', () => {
     spinner.classList.add('spinnerDay')
     spinner.classList.remove('spinner')
     h1[0].style.color = '#272727'
+    p[0].style.color = '#272727'
     
   } else {
     spinner.classList.add('spinner')
     spinner.classList.remove('spinnerDay')
     h1[0].style.color = '#fdfcef'
+      p[0].style.color = '#fdfcef'
 
   }
   
@@ -24,7 +27,6 @@ container.addEventListener('click', () => {
   } else {
     bodybg.classList.add('bgday')
     bodybg.classList.remove('bgnite')
-
   }
   
   if(bg.className == 'bg') {
