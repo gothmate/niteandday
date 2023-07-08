@@ -2,10 +2,52 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
 
+h1 {
+  padding: 2rem;
+  text-align: center;
+}
+
+.bodybg {
+  z-index: -10;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(to right, #ffffff 8%, #0b0138, #05011a);
+  width: 400%;
+  height: 100vh;
+}
+
+.bgnite {
+  left: -200%;
+  animation: 3s bodyNite;
+}
+
+.bgday {
+  left: 0;
+  animation: 3s bodyDay;
+}
+
+@keyframes bodyDay {
+  0% {
+    left: -300%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes bodyNite {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -300%;
+  }
+}
 body {
-  background: #272727;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .container {
@@ -30,7 +72,7 @@ body {
   height: 20rem;
   border-radius: 50%;
   transform: rotate(180deg);
-  animation: spin 6s forwards;
+  animation: spin 3s forwards;
 }
 
 .spinnerDay {
@@ -41,7 +83,7 @@ body {
   height: 20rem;
   border-radius: 50%;
   transform: rotate(0deg);
-  animation: spinDay 6s forwards;
+  animation: spinDay 3s forwards;
 }
 
 @keyframes spin {
@@ -68,7 +110,7 @@ body {
   border-radius: 50%;
   filter: blur(30px);
   background: conic-gradient(#f7bb38, #f7bb38, #da4837, #b10042, #1e84f7, #282bce, #14045f, #3f006c, #750050, #b10042, #da4837, #f7bb38);
-  animation: 6s spinTime forwards;
+  animation: 3s spinTime forwards;
 }
 
 .bgSpin {
@@ -79,7 +121,7 @@ body {
   border-radius: 50%;
   filter: blur(30px);
   background: conic-gradient(#f7bb38, #f7bb38, #da4837, #b10042, #1e84f7, #282bce, #14045f, #3f006c, #750050, #b10042, #da4837, #f7bb38);
-  animation: 6s spinNite forwards;
+  animation: 3s spinNite forwards;
 }
 
 @keyframes spinTime {
