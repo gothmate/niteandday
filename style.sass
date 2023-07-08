@@ -1,3 +1,20 @@
+@mixin spin
+  position: absolute
+  top: calc(50% - 2rem)
+  left: calc(-50% - 5rem)
+  width: 20rem
+  height: 20rem
+  border-radius: 50%
+
+@mixin bgSpin
+  position: absolute
+  right: -150%
+  width: 322px
+  height: 322px
+  border-radius: 50%
+  filter: blur(30px)
+  background: conic-gradient(#f7bb38, #f7bb38,#da4837,#b10042,#1e84f7, #282bce,#14045f, #3f006c, #750050,  #b10042,  #da4837,  #f7bb38) 
+  
 * 
   margin: 0
   padding: 0
@@ -20,21 +37,11 @@ body
   background: linear-gradient(#3f006c, #750050, #b10042, #da4837, #f7bb38)
 
 .spinner
-  position: absolute
-  top: calc(50% - 2rem)
-  left: calc(-50% - 5rem)
-  width: 20rem
-  height: 20rem
-  border-radius: 50%
+  @include spin
   transform: rotate(180deg)
   animation: spin 6s forwards
 .spinnerDay
-  position: absolute
-  top: calc(50% - 2rem)
-  left: calc(-50% - 5rem)
-  width: 20rem
-  height: 20rem
-  border-radius: 50%
+  @include spin
   transform: rotate(0deg)
   animation: spinDay 6s forwards
 
@@ -51,22 +58,10 @@ body
   
     
 .bg
-  position: absolute
-  right: -150%
-  width: 322px
-  height: 322px
-  border-radius: 50%
-  filter: blur(30px)
-  background: conic-gradient(#f7bb38, #f7bb38,#da4837,#b10042,#1e84f7, #282bce,#14045f, #3f006c, #750050,  #b10042,  #da4837,  #f7bb38) 
+  @include bgSpin
   animation: 6s spinTime forwards
 .bgSpin
-  position: absolute
-  right: -150%
-  width: 322px
-  height: 322px
-  border-radius: 50%
-  filter: blur(30px)
-  background: conic-gradient(#f7bb38, #f7bb38,#da4837,#b10042,#1e84f7, #282bce,#14045f, #3f006c, #750050,  #b10042,  #da4837,  #f7bb38) 
+  @include bgSpin
   animation: 6s spinNite forwards
 
 @keyframes spinTime
